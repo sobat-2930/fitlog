@@ -1,3 +1,5 @@
+// Grid component for displaying workout cards
+
 "use client";
 
 import { useMemo } from "react";
