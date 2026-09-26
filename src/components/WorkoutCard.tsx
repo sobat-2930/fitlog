@@ -1,3 +1,5 @@
+// Reusable card component for displaying workout information
+
 import Link from "next/link";
 import Image from "next/image";
 import { Workout } from "@/types/workout";
