@@ -1,3 +1,5 @@
+// Workout details page for displaying selected workout information
+
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getWorkoutById } from "@/lib/api";
