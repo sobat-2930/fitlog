@@ -1,3 +1,4 @@
+// Root layout for the FitLog application
 import type { Metadata } from "next";
 import "./globals.css";
 import { FitLogProvider } from "@/context/FitLogContext";
