@@ -1,3 +1,5 @@
+// Navigation bar for the FitLog application
+
 "use client";
 
 import Link from "next/link";
