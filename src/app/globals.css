@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-base: #0a0a0a;
+  --color-panel: #141414;
+  --color-card: #161616;
+  --color-line: #262626;
+  --color-accent: #d4ff3f;
+  --color-muted: #9a9a9a;
+
+  --radius-xl2: 14px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0a0a0a;
+  color: #f5f5f5;
 }
+
+.badge {
+  @apply px-2.5 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wide;
+}
+.badge-chest { @apply bg-accent text-black; }
+.badge-arms { @apply bg-orange-400 text-black; }
+.badge-back { @apply bg-purple-400 text-black; }
+.badge-legs { @apply bg-sky-400 text-black; }
+.badge-core { @apply bg-yellow-300 text-black; }
+.badge-shoulders { @apply bg-pink-400 text-black; }
+.badge-fullbody { @apply bg-red-400 text-black; }
