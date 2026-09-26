@@ -1,13 +1,19 @@
 
-// API functions for FitLog workout data
 import { Workout } from "@/types/workout";
+import localWorkouts from "@/data/workouts.json";
 
 const BASE_URL = "https://api.abcz.workers.dev/api/fitlog";
 
 export async function getWorkouts(): Promise<Workout[]> {
-  const res = await fetch(BASE_URL, { cache: "no-store" });
-  if (!res.ok) throw new Error("Failed to load workouts");
-  return res.json();
+  try {
+    const res = await fetch(BASE_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error("API not ok");
+    const data = await res.json();
+    if (Array.isArray(data) && data.length > 0) return data as Workout[];
+    throw new Error("Empty API response");
+  } catch {
+    return localWorkouts as Workout[];
+  }
 }
 
 export async function getWorkoutById(id: string): Promise<Workout | null> {
@@ -20,7 +26,7 @@ export async function getWorkoutById(id: string): Promise<Workout | null> {
       }
     }
   } catch {
-    
+    // ignore, fall back below
   }
 
   const all = await getWorkouts();
