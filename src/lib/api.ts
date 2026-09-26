@@ -1,5 +1,5 @@
 
-
+// API functions for FitLog workout data
 import { Workout } from "@/types/workout";
 
 const BASE_URL = "https://api.abcz.workers.dev/api/fitlog";
